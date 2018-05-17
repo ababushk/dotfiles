@@ -70,3 +70,7 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+
+(use-package org
+  :config
+  (setq org-startup-indented t))
