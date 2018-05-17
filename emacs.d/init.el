@@ -1,3 +1,5 @@
+;; (package-initialize)
+
 ;; not for github's eyes :)
 (let ((personal-settings "~/.emacs.d/personal.el"))
  (when (file-exists-p personal-settings)
