@@ -63,11 +63,10 @@
 (use-package ace-window
   :bind* ("M-o" . ace-window))
 
-(use-package smart-mode-line
+(use-package groovy-mode
   :ensure t
-  :config
-  (progn
-    (tool-bar-mode -1)
-    (setq sml/theme 'dark)
-    (setq sml/name-width 40)
-    (setq sml/mode-width 'full)))
+  :mode "\\.groovy\\'\\|\\.gradle\\'")
+
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
