@@ -1,0 +1,7 @@
+# do not store packages files in git
+# except 'diminish' which is needed for use-package
+
+emacs.d/elisp/**
+!emacs.d/elisp/diminish*
+emacs.d/personal.el
+emacs.d/smex-items
