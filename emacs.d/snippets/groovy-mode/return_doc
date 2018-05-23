@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: return_doc
+# key: @r
+# --
+ * @return ${1}

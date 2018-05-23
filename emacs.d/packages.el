@@ -74,3 +74,9 @@
 (use-package org
   :config
   (setq org-startup-indented t))
+
+(use-package yasnippet
+  :init
+  (yas-global-mode)
+  :config
+  (yas-reload-all))
