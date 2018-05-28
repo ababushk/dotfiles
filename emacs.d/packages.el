@@ -80,3 +80,7 @@
   (yas-global-mode)
   :config
   (yas-reload-all))
+
+(use-package markdown-mode
+  :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
+  :config)
