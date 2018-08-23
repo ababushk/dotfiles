@@ -5,3 +5,4 @@ emacs.d/elisp/**
 !emacs.d/elisp/diminish*
 emacs.d/personal.el
 emacs.d/smex-items
+emacs.d/request

@@ -6,7 +6,8 @@
       initial-scratch-message ";; ready\n\n"
       package-enable-at-startup nil
       package-user-dir "~/.emacs.d/elisp/"
-      package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")
+      package-archives '(("org"   . "http://orgmode.org/elpa/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
                          ("gnu" . "http://elpa.gnu.org/packages/")))
 
 (eval-when-compile
@@ -72,6 +73,8 @@
   :init (global-flycheck-mode))
 
 (use-package org
+  :ensure org-plus-contrib
+  :pin org
   :config
   (setq org-startup-indented t))
 
@@ -84,3 +87,6 @@
 (use-package markdown-mode
   :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
   :config)
+
+(use-package org-jira
+  :defer t)
