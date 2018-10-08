@@ -90,3 +90,19 @@
 
 (use-package org-jira
   :defer t)
+
+(use-package ample-theme
+  :init
+  (load-theme 'ample t t)
+  (load-theme 'ample-flat t t)
+  (load-theme 'ample-light t t)
+  (enable-theme 'ample)
+  :defer t
+  :ensure t
+  :config)
+
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  (progn
+    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)))
