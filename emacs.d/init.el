@@ -1,4 +1,6 @@
 ;; (package-initialize)
+(setenv "INSIDE_EMACS" (format "%s,comint" emacs-version))
+(pinentry-start)
 
 ;; not for github's eyes :)
 (let ((personal-settings "~/.emacs.d/personal.el"))
