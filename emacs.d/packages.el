@@ -60,15 +60,22 @@
 (use-package org-jira
   :defer t)
 
-(use-package ample-theme
-  :init
-  (load-theme 'ample t t)
-  (load-theme 'ample-flat t t)
-  (load-theme 'ample-light t t)
-  (enable-theme 'ample)
-  :defer t
+(use-package nord-theme
   :ensure t
-  :config)
+  :init
+  (setq nord-comment-brightness 15)
+  (setq nord-region-highlight "snowstorm")
+  )
+
+;; (use-package ample-theme
+;;   :init
+;;   (load-theme 'ample t t)
+;;   (load-theme 'ample-flat t t)
+;;   (load-theme 'ample-light t t)
+;;   (enable-theme 'ample)
+;;   :defer t
+;;   :ensure t
+;;   :config)
 
 (use-package rainbow-delimiters
   :ensure t
