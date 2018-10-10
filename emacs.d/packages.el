@@ -24,7 +24,6 @@
 (require 'bind-key)
 (require 'diminish)
 
-
 (use-package magit
   :ensure t
   :bind ("C-c s" . magit-status))
@@ -46,11 +45,11 @@
 
 (use-package web-mode
   :mode (("\\.html?\\'" . web-mode)
-         ("\\.tmpl?\\'" . web-mode))
+	 ("\\.tmpl?\\'" . web-mode))
   :config
   (progn
     (setq web-mode-engines-alist
-          '(("\\.tmpl\\'"  . "mako")))
+	  '(("\\.tmpl\\'"  . "mako")))
 
     (setq web-mode-enable-auto-pairing t)
     (setq web-mode-enable-auto-closing t)
@@ -109,14 +108,14 @@
   :config
   (setq org-startup-indented t)
   (add-to-list 'org-structure-template-alist
-               (list "j" (concat "?\n"
-                                 "*Requirements*\n"
-                                 "#\n"
-                                 "*Justification*\n"
-                                 "\n"
-                                 "*Steps*\n"
-                                 "#\n"
-                                 "\n"))))
+	       (list "j" (concat "?\n"
+				 "*Requirements*\n"
+				 "#\n"
+				 "*Justification*\n"
+				 "\n"
+				 "*Steps*\n"
+				 "#\n"
+				 "\n"))))
 (use-package yasnippet
   :init
   (yas-global-mode)
