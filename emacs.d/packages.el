@@ -2,13 +2,17 @@
 ;; Emacs 25 puts back package-initialize if it's not found commented out:
 ;; (package-initialize)
 
-(setq inhibit-startup-screen t
-      initial-scratch-message ";; ready\n\n"
-      package-enable-at-startup nil
+(setq package-enable-at-startup nil
       package-user-dir "~/.emacs.d/elisp/"
-      package-archives '(("org"   . "http://orgmode.org/elpa/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")))
+      package-archives '(("org"           . "http://orgmode.org/elpa/")
+                         ("melpa-stable"  . "https://stable.melpa.org/packages/")
+                         ("melpa"         . "http://melpa.milkbox.net/packages/")
+                         ("gnu"           . "http://elpa.gnu.org/packages/"))
+      package-archives-priorities '(("org" . 10)
+                                    ("melpa-stable" . 9)
+                                    ("gnu" . 5)
+                                    ("melpa" . 0)))
+
 
 (eval-when-compile
   (require 'package)
@@ -59,12 +63,21 @@
 (use-package org-jira
   :defer t)
 
-(use-package nord-theme
-  :ensure t
+;; (use-package nord-theme
+;;   :ensure t
+;;   :init
+;;   (load-theme 'nord)
+;;   (setq nord-comment-brightness 15)
+;;   (setq nord-region-highlight "snowstorm")
+;;   (enable-theme 'nord)
+;;   )
+(use-package dracula-theme
   :init
-  (setq nord-comment-brightness 15)
-  (setq nord-region-highlight "snowstorm")
-  )
+  (load-theme 'dracula t t)
+  (enable-theme 'dracula)
+  :defer t
+  :ensure t
+  :config)
 
 ;; (use-package ample-theme
 ;;   :init
@@ -103,8 +116,7 @@
   :init (global-flycheck-mode))
 
 (use-package org
-  :ensure org-plus-contrib
-  :pin org
+  :ensure t
   :config
   (setq org-startup-indented t)
   (add-to-list 'org-structure-template-alist
@@ -128,3 +140,18 @@
 
 (use-package org-jira
   :defer t)
+
+(use-package pinentry
+)
+
+(use-package ox-jira)
+
+(use-package powerline)
+
+(use-package better-defaults)
+
+(use-package ansible
+  :ensure t
+  :config
+  (setq ansible::vault-password-file "~/.vault_pass.txt")
+  )
