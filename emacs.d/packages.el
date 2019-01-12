@@ -155,3 +155,6 @@
   :config
   (setq ansible::vault-password-file "~/.vault_pass.txt")
   )
+
+(provide 'packages)
+;;; packages.el ends here
