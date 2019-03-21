@@ -156,5 +156,10 @@
   (setq ansible::vault-password-file "~/.vault_pass.txt")
   )
 
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode)
+  (setq projectile-enable-caching t))
 (provide 'packages)
 ;;; packages.el ends here
