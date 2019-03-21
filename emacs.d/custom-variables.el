@@ -27,10 +27,11 @@
     ("~/org/work.org" "~/org/personal.org" "~/org/university.org")))
  '(org-babel-load-languages (quote ((emacs-lisp . t) (shell . t) (python . t))))
  '(org-confirm-babel-evaluate nil)
+ '(org-export-initial-scope (quote subtree))
  '(org-return-follows-link t)
  '(package-selected-packages
    (quote
-    (ansible lua-mode org-drill-table org-drill gitlab-ci-mode-flycheck gitlab-ci-mode helm gitlab better-defaults ox-jira klere-theme powerline pinentry rainbow-delimiters ample-theme org-jira markdown-mode org-plus-contrib yasnippet flycheck groovy-mode yaml-mode ws-butler web-mode use-package smex smart-mode-line magit dockerfile-mode diminish ace-window)))
+    (htmlize edit-indirect markdown-toc cmake-mode projectile ess ansible lua-mode org-drill-table org-drill gitlab-ci-mode-flycheck gitlab-ci-mode helm gitlab better-defaults ox-jira klere-theme powerline pinentry rainbow-delimiters ample-theme org-jira markdown-mode org-plus-contrib yasnippet flycheck groovy-mode yaml-mode ws-butler web-mode use-package smex smart-mode-line magit dockerfile-mode diminish ace-window)))
  '(python-shell-interpreter "python3")
  '(vc-annotate-background "#1d1f21")
  '(vc-annotate-color-map
