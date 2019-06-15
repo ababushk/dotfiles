@@ -22,8 +22,15 @@
 ;; custom functions
 (load "~/.emacs.d/user-functions.el")
 
-;; Save all tempfiles in $TMPDIR/emacs$UID/
-(defconst emacs-tmp-dir (expand-file-name (format "emacs%d" (user-uid)) temporary-file-directory))
+;; Change default directory for temp files
+(defconst emacs-tmp-dir
+  (expand-file-name "temp" user-emacs-directory))
+
+(make-directory emacs-tmp-dir :parents)
+(set-file-modes emacs-tmp-dir #o700)
+
+(setq server-socket-dir emacs-tmp-dir)
+
 (setq backup-directory-alist
       `((".*" . ,emacs-tmp-dir)))
 (setq auto-save-file-name-transforms

@@ -6,3 +6,4 @@ emacs.d/elisp/**
 emacs.d/personal.el
 emacs.d/smex-items
 emacs.d/request
+emacs.d/temp
