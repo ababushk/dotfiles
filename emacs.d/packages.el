@@ -74,9 +74,6 @@
     (setq web-mode-enable-auto-expanding t)
     (setq web-mode-enable-css-colorization t)))
 
-(use-package org-jira
-  :defer t)
-
 (use-package gruvbox-theme
   :ensure t
   :init
