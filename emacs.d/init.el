@@ -45,17 +45,7 @@
                                (file+headline "~/org/notes.org" "NOTES")
                                "* %i%?")))
 
-(bind-key "C-c c" 'org-capture)
-
 (setq org-refile-targets '((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9)))
-;; (setq org-refile-targets '(("~/org/work.org"        :maxlevel . 3)
-;;                            ("~/org/personal.org"    :level    . 1)
-;;                            ("~/org/tickler.org"     :maxlevel . 1)
-;;                            ("~/org/notes.org"       :maxlevel . 1)
-;;                            ("~/org/university.org"  :maxlevel . 1)
-;;                            ("~/org/monthly.org"     :maxlevel . 1)
-;;                            ))
-
 (setq visible-bell       nil
       ring-bell-function #'ignore)
