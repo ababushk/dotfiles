@@ -28,9 +28,23 @@
 (require 'bind-key)
 (require 'diminish)
 
+(use-package lua-mode)
+
+;; to use Emacs' keybindings with russian layout
+(use-package reverse-im
+  :config
+  (reverse-im-activate "russian-computer")
+)
+
+(use-package multiple-cursors)
+
 (use-package magit
   :ensure t
   :bind ("C-c s" . magit-status))
+
+(use-package magit-lfs
+  :ensure t
+)
 
 (use-package yaml-mode
   :ensure t
@@ -63,38 +77,18 @@
 (use-package org-jira
   :defer t)
 
-;; (use-package nord-theme
-;;   :ensure t
-;;   :init
-;;   (load-theme 'nord)
-;;   (setq nord-comment-brightness 15)
-;;   (setq nord-region-highlight "snowstorm")
-;;   (enable-theme 'nord)
-;;   )
-(use-package dracula-theme
-  :init
-  (load-theme 'dracula t t)
-  (enable-theme 'dracula)
-  :defer t
+(use-package gruvbox-theme
   :ensure t
-  :config)
-
-;; (use-package ample-theme
-;;   :init
-;;   (load-theme 'ample t t)
-;;   (load-theme 'ample-flat t t)
-;;   (load-theme 'ample-light t t)
-;;   (enable-theme 'ample)
-;;   :defer t
-;;   :ensure t
-;;   :config)
+  :init
+  (load-theme 'gruvbox-light-hard)
+  (enable-theme 'gruvbox-light-hard)
+)
 
 (use-package rainbow-delimiters
   :ensure t
   :init
   (progn
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)))
-
 
 (use-package ido
   :config
@@ -109,7 +103,7 @@
 
 (use-package groovy-mode
   :ensure t
-  :mode "\\.groovy\\'\\|\\.gradle\\'")
+  :mode "\\.groovy\\'\\|\\.gradle\\|Jenkinsfile'")
 
 (use-package flycheck
   :ensure t
@@ -119,15 +113,8 @@
   :ensure t
   :config
   (setq org-startup-indented t)
-  (add-to-list 'org-structure-template-alist
-	       (list "j" (concat "?\n"
-				 "*Requirements*\n"
-				 "#\n"
-				 "*Justification*\n"
-				 "\n"
-				 "*Steps*\n"
-				 "#\n"
-				 "\n"))))
+)
+
 (use-package yasnippet
   :init
   (yas-global-mode)
@@ -141,12 +128,8 @@
 (use-package org-jira
   :defer t)
 
-(use-package pinentry
-)
-
+;; JIRA markup
 (use-package ox-jira)
-
-(use-package powerline)
 
 (use-package better-defaults)
 
@@ -159,7 +142,8 @@
 (use-package projectile
   :ensure t
   :config
-  (projectile-global-mode)
+  (projectile-mode)
   (setq projectile-enable-caching t))
+
 (provide 'packages)
 ;;; packages.el ends here
