@@ -142,5 +142,16 @@
   (projectile-mode)
   (setq projectile-enable-caching t))
 
+;; Setup autocompletion
+(use-package company
+  :ensure t
+  :config
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 3)
+  (global-company-mode t)
+)
+
+(use-package paredit)
+
 (provide 'packages)
 ;;; packages.el ends here
