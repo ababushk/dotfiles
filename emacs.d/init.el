@@ -26,9 +26,11 @@
 (defconst emacs-tmp-dir
   (expand-file-name "temp" user-emacs-directory))
 
+;; Set correct access mode
 (make-directory emacs-tmp-dir :parents)
 (set-file-modes emacs-tmp-dir #o700)
 
+;; And place server socket file here too
 (setq server-socket-dir emacs-tmp-dir)
 
 (setq backup-directory-alist
