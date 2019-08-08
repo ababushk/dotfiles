@@ -55,7 +55,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "konsole"
 editor = 'emacsclient -a "" -c -s ' .. home_path .. '.emacs.d/temp/server'
 -- editor_cmd = terminal .. " -e " .. editor
 editor_cmd = editor
