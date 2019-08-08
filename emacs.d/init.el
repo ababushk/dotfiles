@@ -43,14 +43,14 @@
 ;; org-mode settings
 (setq org-agenda-files (list "~/org"))
 
-(setq org-capture-templates '(("t" "Todo [inbox]" entry
+(setq org-capture-templates '(("t" "TODO entry [inbox]" entry
                                (file+headline "~/org/inbox.org" "Tasks")
                                "* TODO %i%?")
-                              ("c" "Clipboard [inbox]" entry
+                              ("c" "Paste clipboard content [inbox]" entry
                                (file+headline "~/org/inbox.org" "Tasks")
                                "*  %c%?")
 
-                              ("n" "Some note [notes]" entry
+                              ("n" "Add a note [notes]" entry
                                (file+headline "~/org/notes.org" "NOTES")
                                "* %i%?")))
 
