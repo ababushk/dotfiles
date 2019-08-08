@@ -59,3 +59,6 @@
 
 (setq visible-bell       nil
       ring-bell-function #'ignore)
+
+;; Change default window title
+(setq-default frame-title-format '("%f [%m]"))
