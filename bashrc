@@ -26,16 +26,22 @@ shopt -s checkwinsize
 
 
 # Functions
-function emacssudoedit() {
-    emacsclient -a "" -t -e "(find-file \"/sudo::$(realpath $1)\")"
-}
 
 # Alias definitions
-alias et='emacsclient -a "" -t' # terminal
-alias es='emacssudoedit' # sudo terminal
-alias eg='emacsclient -a "" -c' # GUI
+alias myemacsclient="emacsclient -a '' -s ${HOME}/.emacs.d/temp/server"
+function emacssudoedit_term() {
+    myemacsclient -t -e "(find-file \"/sudo::$(realpath $1)\")"
+}
+function emacssudoedit_gui() {
+    myemacsclient -c -e "(find-file \"/sudo::$(realpath $1)\")"
+}
+
+alias et='myemacsclient -t' # terminal
+alias est='emacssudoedit_term' # sudo terminal
+alias esg='emacssudoedit_gui' # sudo terminal
+alias eg='myemacsclient -c' # GUI
 alias magit='et -e "(magit-status \"$(pwd)\")"'
-alias stopemacs='emacsclient -e "(save-buffers-kill-emacs)"'
+alias stopemacs='myemacsclient -e "(save-buffers-kill-emacs)"'
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
