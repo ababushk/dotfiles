@@ -148,10 +148,13 @@
   :config
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 3)
+  (setq company-dabbrev-downcase nil)
   (global-company-mode t)
 )
 
 (use-package paredit)
+
+(use-package markdown-toc)
 
 (provide 'packages)
 ;;; packages.el ends here
