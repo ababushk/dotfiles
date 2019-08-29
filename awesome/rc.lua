@@ -60,6 +60,9 @@ editor = 'emacsclient -a "" -c -s ' .. home_path .. '.emacs.d/temp/server'
 -- editor_cmd = terminal .. " -e " .. editor
 editor_cmd = editor
 
+screenshot_filename = home_path .. 'Pictures/%Y-%m-%d_$wx$h_screenshot.png'
+screenshot_cmd = "sleep 0.2 && scrot -s '" .. screenshot_filename .. "' -e 'cat $f | xclip -selection clipboard -t image/png'"
+
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -344,8 +347,11 @@ globalkeys = gears.table.join(
     -- Volume control
     awful.key({}, "XF86AudioRaiseVolume", function() volumecfg:up() end),
     awful.key({}, "XF86AudioLowerVolume", function() volumecfg:down() end),
-    awful.key({}, "XF86AudioMute",        function() volumecfg:toggle() end)
-)
+    awful.key({}, "XF86AudioMute",        function() volumecfg:toggle() end),
+
+    -- Screenshots
+    awful.key({}, "Print",                function() awful.spawn.with_shell(screenshot_cmd) end)
+) -- keybindings
 
 clientkeys = gears.table.join(
     awful.key({ modkey,           }, "f",
