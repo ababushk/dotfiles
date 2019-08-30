@@ -4,6 +4,7 @@ software needed:
 - scrot - taking screenshots
 - konsole - terminal emulator
 - xclip - clipboard manipulation
+- qt5ct - Qt applications theme configuration
 software added to autostart:
 - xscreensaver daemon
 - akonadi daemon to enable exchange e-mail in kmail and kontact
