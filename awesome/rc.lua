@@ -2,15 +2,9 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
--- Configure home path so you dont have too
+--Configure home path so you dont have too
 home_path = os.getenv('HOME') .. '/'
 
--- Fix QT applications theme
-posix.setenv('QT_QPA_PLATFORMTHEME', 'qt5ct')
-
--- Add local binaries directory to PATH
-mypath = os.getenv('PATH')
-posix.setenv('PATH', home_path .. '.local/bin:' .. mypath)
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
