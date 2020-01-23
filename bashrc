@@ -61,7 +61,6 @@ alias l='ls -CF'
 
 # Variables
 export PATH="${HOME}/.local/bin:${PATH}"
-export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
 export EDITOR=et
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
