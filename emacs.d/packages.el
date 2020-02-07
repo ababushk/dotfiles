@@ -156,5 +156,12 @@
 
 (use-package markdown-toc)
 
+(use-package nginx-mode)
+
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
 (provide 'packages)
 ;;; packages.el ends here
