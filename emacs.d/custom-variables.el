@@ -31,7 +31,7 @@
  '(org-return-follows-link t)
  '(package-selected-packages
    (quote
-    (paredit company multiple-cursors reverse-im language-detection magit-lfs darktooth-theme gruvbox-theme htmlize edit-indirect markdown-toc cmake-mode projectile ess ansible lua-mode org-drill-table org-drill gitlab-ci-mode-flycheck gitlab-ci-mode helm gitlab better-defaults ox-jira klere-theme powerline pinentry rainbow-delimiters ample-theme org-jira markdown-mode org-plus-contrib yasnippet flycheck groovy-mode yaml-mode ws-butler web-mode use-package smex smart-mode-line magit dockerfile-mode diminish ace-window)))
+    (nginx-mode paredit company multiple-cursors reverse-im language-detection magit-lfs darktooth-theme gruvbox-theme htmlize edit-indirect markdown-toc cmake-mode projectile ess ansible lua-mode org-drill-table org-drill gitlab-ci-mode-flycheck gitlab-ci-mode helm gitlab better-defaults ox-jira klere-theme powerline pinentry rainbow-delimiters ample-theme org-jira markdown-mode org-plus-contrib yasnippet flycheck groovy-mode yaml-mode ws-butler web-mode use-package smex smart-mode-line magit dockerfile-mode diminish ace-window)))
  '(pdf-view-midnight-colors (quote ("#282828" . "#fbf1c7")))
  '(pos-tip-background-color "#36473A")
  '(pos-tip-foreground-color "#FFFFC8")
