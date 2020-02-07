@@ -58,6 +58,8 @@ fi
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
+alias kubenodes='kubectl get nodes --show-labels'
+alias kubepods='kubectl get pods -o wide'
 
 # Variables
 export PATH="${HOME}/.local/bin:${PATH}"
