@@ -1,6 +1,6 @@
 software needed:
 - xscreensaver for screen lock
-- awesome WM 4.3 (https://launchpad.net/~klaus-vormweg/+archive/ubuntu/awesome for Ubuntu 18, Fedora and Arch already have it)
+- awesome WM 4.3 (https://launchpad.net/~klaus-vormweg/+archive/ubuntu/awesome for Ubuntu 18, Fedora and Arch already have it) and lua-posix package
 - scrot - taking screenshots
 - konsole - terminal emulator
 - xclip - clipboard manipulation
