@@ -7,7 +7,13 @@ software needed:
     ln -s posix_c.so posix.so
     ```
 - scrot - taking screenshots
-- konsole - terminal emulator
+- alacritty - terminal emulator
+  - Install on Ubuntu 18
+    ```
+    sudo -E add-apt-repository ppa:mmstick76/alacritty
+    sudo apt update
+    sudo apt install alacritty
+    ```
 - xclip - clipboard manipulation
 - qt5ct - Qt applications theme configuration
 software added to autostart:
