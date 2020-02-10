@@ -156,12 +156,14 @@
 
 (use-package markdown-toc)
 
-(use-package nginx-mode)
-
 (use-package editorconfig
   :ensure t
   :config
   (editorconfig-mode 1))
+
+(use-package cmake-mode)
+
+(use-package nginx-mode)
 
 (provide 'packages)
 ;;; packages.el ends here
