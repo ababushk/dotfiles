@@ -4,6 +4,14 @@ pcall(require, "luarocks.loader")
 
 --Configure home path so you dont have too
 home_path = os.getenv('HOME') .. '/'
+local path = os.getenv('PATH') .. ':' .. home_path .. '.local/bin'
+
+--Environment variables
+local _, posix = pcall(require, 'posix')
+--Dolphin won't display icons without that
+posix.setenv('XDG_CURRENT_DESKTOP', "kde")
+posix.setenv('QT_QPA_PLATFORMTHEME', "qt5ct")
+posix.setenv('PATH', path)
 
 -- Standard awesome library
 local gears = require("gears")
@@ -55,7 +63,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "konsole"
+terminal = "alacritty"
 editor = 'emacsclient -a "" -c -s ' .. home_path .. '.emacs.d/temp/server'
 -- editor_cmd = terminal .. " -e " .. editor
 editor_cmd = editor
@@ -516,7 +524,16 @@ awful.rules.rules = {
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = true }
     },
-
+    { rule = { class = "smplayer" },
+      properties = {
+         floating = true,
+         ontop = true,
+         sticky = true
+    }},
+    { rule = { class = "Steam" },
+      properties = {
+         maximized = true,
+    }},
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
