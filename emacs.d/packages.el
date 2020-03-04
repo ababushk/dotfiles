@@ -74,12 +74,9 @@
     (setq web-mode-enable-auto-expanding t)
     (setq web-mode-enable-css-colorization t)))
 
-(use-package gruvbox-theme
-  :ensure t
-  :init
-  (load-theme 'gruvbox-light-hard)
-  (enable-theme 'gruvbox-light-hard)
-)
+(use-package dracula-theme
+  :init (load-theme 'dracula t)
+  :ensure t)
 
 (use-package rainbow-delimiters
   :ensure t
