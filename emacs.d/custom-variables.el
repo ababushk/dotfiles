@@ -17,6 +17,7 @@
  '(epa-pinentry-mode (quote loopback))
  '(fci-rule-color "#5c5e5e")
  '(flycheck-python-pycompile-executable "python3")
+ '(frame-resize-pixelwise t)
  '(hl-sexp-background-color "#1c1f26")
  '(indent-tabs-mode nil)
  '(jdee-db-active-breakpoint-face-colors (cons "#000000" "#fd971f"))
@@ -64,4 +65,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((((class color) (min-colors 16777215)) (:background "#282828" :foreground "#fdf4c1")) (((class color) (min-colors 255)) (:background "#262626" :foreground "#ffffaf")))))
