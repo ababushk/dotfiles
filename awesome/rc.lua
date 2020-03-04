@@ -61,10 +61,12 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.wallpaper = awful.util.get_configuration_dir() .. "wallpaper.jpg"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = 'emacsclient -a "" -c -s ' .. home_path .. '.emacs.d/temp/server'
+emacs_socket_path = home_path .. '.emacs.d/temp/server'
+editor = 'emacsclient -a "" -c -s ' .. emacs_socket_path
 -- editor_cmd = terminal .. " -e " .. editor
 editor_cmd = editor
 
@@ -306,7 +308,7 @@ globalkeys = gears.table.join(
     --    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
     --              {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "l", function () awful.spawn.with_shell("xscreensaver-command -lock") end),
-
+    awful.key({ modkey,           }, "F1", function () awful.spawn.with_shell("emacsclient -n -s " .. emacs_socket_path .. " -e '(make-capture-frame)'") end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
