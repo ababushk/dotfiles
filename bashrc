@@ -64,6 +64,7 @@ alias kubepods='kubectl get pods -o wide'
 # Variables
 export PATH="${HOME}/.local/bin:${PATH}"
 export EDITOR=et
+export XDG_CURRENT_DESKTOP=kde
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 PS1="[\u@\[$(tput setaf 6)\]\h\[$(tput sgr0)\] \W]\\$ \[$(tput sgr0)\]"
