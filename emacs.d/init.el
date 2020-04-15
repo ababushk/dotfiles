@@ -9,6 +9,8 @@
    (load-file personal-settings))
 )
 
+(set-frame-font "JetBrains Mono 13" nil t)
+
 (add-to-list 'load-path "~/.emacs.d/elisp/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
