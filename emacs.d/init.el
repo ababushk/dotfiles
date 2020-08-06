@@ -16,13 +16,13 @@
 
 ;; setup custom settings file
 (setq custom-file "~/.emacs.d/custom-variables.el")
-(load custom-file)
+;; (load custom-file)
 
 ;; initialize and setup packages
 (load "~/.emacs.d/packages.el")
 
 ;; custom functions
-(load "~/.emacs.d/user-functions.el")
+;; (load "~/.emacs.d/user-functions.el")
 
 ;; Change default directory for temp files
 (defconst emacs-tmp-dir
