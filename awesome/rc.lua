@@ -360,7 +360,7 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioMute",        function() volumecfg:toggle() end),
 
     -- Screenshots
-    awful.key({}, "Print",                function() awful.spawn.with_shell(screenshot_cmd) end)
+    awful.key({ modkey, "Shift" }, "s",   function() awful.spawn.with_shell(screenshot_cmd) end)
 ) -- keybindings
 
 clientkeys = gears.table.join(
@@ -535,6 +535,10 @@ awful.rules.rules = {
     { rule = { class = "Steam" },
       properties = {
          maximized = true,
+    }},
+    { rule = { class = "Emacs" },
+      properties = {
+         size_hints_honor = false,
     }},
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
