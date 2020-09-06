@@ -532,6 +532,12 @@ awful.rules.rules = {
          ontop = true,
          sticky = true
     }},
+    { rule = { name = "Picture in picture" },
+      properties = {
+         floating = true,
+         ontop = true,
+         sticky = true
+    }},
     { rule = { class = "Steam" },
       properties = {
          maximized = true,
