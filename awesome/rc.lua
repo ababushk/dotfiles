@@ -541,6 +541,7 @@ awful.rules.rules = {
     { rule = { class = "Steam" },
       properties = {
          maximized = true,
+         tag = "3",
     }},
     { rule = { class = "Emacs" },
       properties = {
