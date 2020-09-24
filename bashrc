@@ -24,6 +24,8 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# autocompletion
+source <(kubectl completion bash)
 
 # Functions
 
@@ -63,11 +65,10 @@ alias kubepods='kubectl get pods -o wide'
 
 # Variables
 export PATH="${HOME}/.local/bin:${PATH}"
-export EDITOR=et
+export EDITOR=emacs
 export XDG_CURRENT_DESKTOP=kde
 export QT_QPA_PLATFORMTHEME="qt5ct"
-
-PS1="[\u@\[$(tput setaf 6)\]\h\[$(tput sgr0)\] \W]\\$ \[$(tput sgr0)\]"
+export PS1="[\u@\[$(tput setaf 6)\]\h\[$(tput sgr0)\] \W]\\$ \[$(tput sgr0)\]"
 
 # not for github's eyes ;)
 if [ -f ${HOME}/.bashrc_personal ]; then
