@@ -24,8 +24,11 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# autocompletion
-source <(kubectl completion bash)
+# kubectl autocompletion
+if command -v kubectl &> /dev/null
+then
+    source <(kubectl completion bash)
+fi
 
 # Functions
 
