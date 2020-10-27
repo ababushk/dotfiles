@@ -1,3 +1,6 @@
+;; to prevent "inapropriate ioctl for device" errors
+;; during gpg decryption
+(setq epa-pinentry-mode 'loopback)
 (setenv "GPG_AGENT_INFO" nil)
 
 (setq inhibit-startup-screen t
@@ -9,7 +12,7 @@
    (load-file personal-settings))
 )
 
-(set-frame-font "JetBrains Mono 13" nil t)
+(set-frame-font "JetBrains Mono 12" nil t)
 
 (add-to-list 'load-path "~/.emacs.d/elisp/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
