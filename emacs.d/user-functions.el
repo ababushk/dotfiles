@@ -80,3 +80,14 @@ i.e. windows tiled side-by-side."
       (with-selected-window window (split-window-sensibly window)))))
 
 (setq split-window-preferred-function 'split-window-really-sensibly)
+
+
+;; function to archive tasks in marked region in org-mode
+;; credits to https://stackoverflow.com/questions/6997387/how-to-archive-all-the-done-tasks-using-a-single-command
+(defun org-archive-tasks-in-region ()
+  (interactive)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (org-element-property :begin (org-element-at-point))))
+   nil 'region))
