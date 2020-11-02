@@ -118,6 +118,7 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (use-package org-jira
+  :pin melpa ;; I want the latest one available
   :defer t)
 
 ;; JIRA markup
