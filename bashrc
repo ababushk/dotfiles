@@ -77,8 +77,16 @@ export XDG_CURRENT_DESKTOP=kde
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export PS1="[\u@\[$(tput setaf 6)\]\h\[$(tput sgr0)\] \W]\\$ \[$(tput sgr0)\]"
 
-
 # not for github's eyes ;)
 if [ -f ${HOME}/.bashrc_personal ]; then
     source ${HOME}/.bashrc_personal
 fi
+
+# Setup Windows Subsystem for Linux
+if [ ! -z "$WSLENV" ]; then
+    # for VcXsrv
+    export LIBGL_ALWAYS_INDIRECT=1
+    export DISPLAY=127.0.0.1:0.0
+    xrdb -merge $HOME/.Xresources
+fi
+
