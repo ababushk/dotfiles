@@ -67,3 +67,11 @@
 
 ;; Change default window title
 (setq-default frame-title-format '("%f [%m]"))
+
+;; Enable powershell on Windows
+(defun run-powershell ()
+  "Run powershell"
+  (interactive)
+  (async-shell-command "c:/windows/system32/WindowsPowerShell/v1.0/powershell.exe -Command -"
+               nil
+               nil))
