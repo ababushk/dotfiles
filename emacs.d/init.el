@@ -18,7 +18,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; setup custom settings file
-(setq custom-file "~/.emacs.d/custom-variables.el")
+(setq custom-file "~/.emacs.d/custom.el")
 ;; (load custom-file)
 
 ;; initialize and setup packages

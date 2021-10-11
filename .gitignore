@@ -1,9 +1,17 @@
 # do not store packages files in git
 # except 'diminish' which is needed for use-package
-
 emacs.d/elisp/**
 !emacs.d/elisp/diminish*
+
+# not for github's eyes
 emacs.d/personal.el
+
+# I want to set variables explicitly in
+# git-controller init.el and other files
+# But sometimes I play with custom variables
+emacs.d/custom.el
+
+# emacs' temporary files
 emacs.d/smex-items
 emacs.d/request
 emacs.d/%backup%~
@@ -12,8 +20,17 @@ emacs.d/backups/
 emacs.d/bookmarks
 emacs.d/eshell/
 emacs.d/ido.last
-emacs.d/ido.last~
 emacs.d/projectile-bookmarks.eld
 emacs.d/tramp
 emacs.d/transient/
-emacs.d/temp
+emacs.d/temp*
+emacs.d/places
+emacs.d/server
+emacs.d/.cache
+emacs.d/.lsp*
+emacs.d/groovy-language-server
+\#*
+
+# other stuff
+nohup.out
+*~
