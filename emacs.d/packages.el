@@ -9,9 +9,9 @@
                          ("melpa"         . "https://melpa.org/packages/")
                          ("gnu"           . "http://elpa.gnu.org/packages/"))
       package-archive-priorities '(("org" . 10)
-                                    ("melpa-stable" . 9)
+                                    ("melpa" . 9)
                                     ("gnu" . 5)
-                                    ("melpa" . 0)))
+                                    ("melpa-stable" . 0)))
 
 (eval-when-compile
   (require 'package)
@@ -92,6 +92,7 @@
   :config
   (ido-mode 1))
 
+;; M-x command but with ido support
 (use-package smex
   :init (smex-initialize)
   :bind ("M-x" . smex))
@@ -179,7 +180,28 @@
   (setq highlight-indent-guides-delay 0)
   (setq highlight-indent-guides-responsive 'stack))
 
+;; Jump-to-definition capabilities
 (use-package dumb-jump)
+
+;; Shows available keybindings for partially pressed shortcuts
+(use-package which-key
+    :config
+    (which-key-mode))
+
+;; Language Server Protocol support
+;; I use it for Groovy code
+;; but it requires manual groovy language server compilation
+
+; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+;; (setq lsp-keymap-prefix "C-l")
+
+;; (use-package lsp-mode
+;;     :hook (
+;;             (groovy-mode . lsp)
+;;             ;; if you want which-key integration
+;;             (lsp-mode . lsp-enable-which-key-integration))
+;;     :commands lsp)
+;; (use-package lsp-ui :commands lsp-ui-mode)
 
 (provide 'packages)
 ;;; packages.el ends here
