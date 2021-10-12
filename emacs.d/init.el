@@ -70,7 +70,7 @@
 
 (setq org-archive-location (concat
                             (expand-file-name
-                             "archive/%s"
+                             "archive/%s_archive"
                              org-directory)
                             "::"))
 
