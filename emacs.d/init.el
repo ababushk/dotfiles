@@ -74,6 +74,12 @@
                              org-directory)
                             "::"))
 
+;; TODO: save only affected buffers
+(advice-add 'org-archive-subtree
+            :after #'org-save-all-org-buffers)
+(advice-add 'org-refile
+            :after #'org-save-all-org-buffers)
+
 ;; disable annoying visible bell
 (setq visible-bell       nil
       ring-bell-function #'ignore)
