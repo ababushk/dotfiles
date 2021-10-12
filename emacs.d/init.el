@@ -73,6 +73,8 @@
                              "archive/%s_archive"
                              org-directory)
                             "::"))
+;; Return old behavior to org-mode structure templates
+(add-to-list 'org-modules 'org-tempo)
 
 ;; TODO: save only affected buffers
 (advice-add 'org-archive-subtree
