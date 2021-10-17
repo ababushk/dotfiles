@@ -17,7 +17,7 @@
     (load-file "~/.emacs.d/windows.el")
 )
 
-(set-frame-font "JetBrains Mono 12" nil t)
+(set-frame-font "JetBrainsMono NF 12" nil t)
 
 (add-to-list 'load-path "~/.emacs.d/elisp/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
