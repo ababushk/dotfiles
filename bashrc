@@ -5,10 +5,12 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=20000
-HISTCONTROL=ignoredups:erasedups
+# The number of commands to remember in the command history
+HISTSIZE=50000
+# do not write both duplicates and commands begin from space
+HISTCONTROL=ignoreboth
+# do not put some commands in the history
+HISTIGNORE='ls:ls -la:ls -lat:cd:tmux a -t 0:et'
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -31,6 +33,17 @@ then
 fi
 
 # Functions
+function ghforksync() {
+    # 'hub sync' works better, https://github.com/github/hub
+    set -x
+    git status
+    git fetch upstream
+    git checkout master
+    git rebase master upstream/master
+    git push
+    git checkout -
+    set +x
+}
 
 # Alias definitions
 alias myemacsclient="emacsclient -a '' -s ${HOME}/.emacs.d/temp/server"
@@ -65,6 +78,9 @@ alias l='ls -CF'
 
 alias kubenodes='kubectl get nodes --show-labels'
 alias kubepods='kubectl get pods -o wide'
+alias kbd='kubectl describe pod'
+alias cordon='kubectl cordon'
+alias uncordon='kubectl uncordon'
 
 # Force xterm-256color on ssh sessions
 # most nodes don't have xterm-24bit I use
@@ -89,4 +105,3 @@ if [ ! -z "$WSLENV" ]; then
     export DISPLAY=127.0.0.1:0.0
     xrdb -merge $HOME/.Xresources
 fi
-
